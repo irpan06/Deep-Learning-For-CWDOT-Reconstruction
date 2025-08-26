@@ -53,5 +53,5 @@ Cukup buka notebook tersebut dengan Jupyter Notebook atau Jupyter Lab, lalu jala
 
 ### **Sitasi & Ucapan Terima Kasih**
 
-* Simulasi numerik dijalankan menggunakan perangkat lunak yang dikembangkan oleh [Nama Peneliti, Tahun].
+* Simulasi numerik dijalankan menggunakan perangkat lunak yang dikembangkan oleh [Ukhrowiyah, 2018].
 * Terima kasih kepada dosen pembimbing, Dr. Nuril Ukhrowiyah, M.Si dan Yhosep Gita Yhun Yhuwana, S.Si., M.T., atas bimbingan dan masukannya.
