@@ -15,9 +15,9 @@ Berikut adalah perbandingan visual antara metode rekonstruksi konvensional (LSL)
 
 ### **Metodologi**
 
-Penelitian ini menggunakan pipeline dua tahap:
-1.  **Model A (Rekonstruksi Awal):** Sebuah model CNN Encoder-Decoder yang mengubah data pengukuran mentah (sinogram 16x16) menjadi citra rekonstruksi awal (64x64).
-2.  **Model B (Optimasi & Super-Resolution):** Sebuah arsitektur U-Net yang menerima output dari Model A dan merefinisinya menjadi citra akhir yang lebih tajam dan akurat.
+Penelitian ini mengembangkan model rekonstruksi citra pada sistem Continuous-Wave Diffuse Optical Tomography (CW-DOT) dengan input berupa data intensitas dalam bentuk gambar dan output berupa citra rekonstruksi yang menyerupai objek asli. Data intensitas diproses melalui tahap normalisasi, serta pembagian menjadi training dan testing set.
+
+Model dibangun menggunakan pendekatan deep learning (CNN) yang mempelajari pemetaan langsung dari distribusi intensitas ke citra rekonstruksi. Proses pelatihan dilakukan dengan meminimalkan fungsi loss BCE, sementara evaluasi performa menggunakan metrik MAE dan DSC untuk menilai kesesuaian hasil rekonstruksi dengan objek asli.
 
 ---
 
@@ -46,16 +46,8 @@ Untuk menjalankan proyek ini, pastikan Anda memiliki Python 3.8+ dan pustaka yan
 
 ### **Cara Menggunakan**
 
-1.  **Generate Dataset:** Jalankan skrip `src/01_generate_dataset.py` untuk membuat data simulasi.
-2.  **Latih Model A:** Jalankan `src/03_train_model_a.py`.
-3.  **Latih Model B:** Jalankan `src/04_train_model_b.py`.
-4.  **Evaluasi Model:** Gunakan notebook `notebooks/02_visualisasi_hasil_model.ipynb` untuk memuat model yang telah dilatih dan mengevaluasi hasilnya.
-
----
-
-### **Hasil**
-
-Pipeline yang diusulkan berhasil mengungguli metode LSL secara signifikan, dengan peningkatan skor **Dice Coefficient** dari **(skor LSL)** menjadi **(skor Model B)** pada data uji.
+Seluruh proses, mulai dari pembuatan arsitektur model, pelatihan model, hingga evaluasi hasil rekonstruksi dapat dijalankan langsung melalui notebook tunggal yang tersedia di folder notebooks/.
+Cukup buka notebook tersebut dengan Jupyter Notebook atau Jupyter Lab, lalu jalankan sel-selnya secara berurutan untuk mereproduksi keseluruhan alur eksperimen.
 
 ---
 
