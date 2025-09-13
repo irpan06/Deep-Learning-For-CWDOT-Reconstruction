@@ -1,57 +1,89 @@
-# Penerapan CNN-UNET Sebagai Metode Rekonstruksi Pada Sistem CWDOT
+# 🧠 CNN-UNET for Reconstruction in Continuous-Wave Diffuse Optical Tomography (CW-DOT)
 
-Repositori ini berisi kode dan sumber daya untuk penelitian skripsi saya di Departemen Fisika, Universitas Airlangga, yang berfokus pada pengembangan metode rekonstruksi pada sistem *Continuous Wave Diffuse Optical Tomography* (CW-DOT) menggunakan *deep learning*.
-
----
-
-### **Demonstrasi Hasil**
-
-Berikut adalah perbandingan visual antara metode rekonstruksi konvensional (LSL) dengan model yang diusulkan.
-
-![Perbandingan Hasil](outputs/figures/model-predict.png)
-*(Gambar di atas menunjukkan bagaimana Model menghasilkan gambar yang mendekati objek asli)*
+This repository contains the code and resources for my undergraduate thesis at the Department of Physics, Universitas Airlangga.  
+The research focuses on developing a reconstruction method for the *Continuous-Wave Diffuse Optical Tomography* (CW-DOT) system using *deep learning*.  
 
 ---
 
-### **Metodologi**
+## 📊 Demonstration Results  
 
-Penelitian ini mengembangkan model rekonstruksi citra pada sistem Continuous-Wave Diffuse Optical Tomography (CW-DOT) dengan input berupa data intensitas dalam bentuk gambar dan output berupa citra rekonstruksi yang menyerupai objek asli. Data intensitas diproses melalui tahap normalisasi, serta pembagian menjadi training dan testing set.
+Below is a visual comparison between the conventional reconstruction method (LSL) and the proposed CNN-UNET model.  
 
-Model dibangun menggunakan pendekatan deep learning (CNN) yang mempelajari pemetaan langsung dari distribusi intensitas ke citra rekonstruksi. Proses pelatihan dilakukan dengan meminimalkan fungsi loss BCE, sementara evaluasi performa menggunakan metrik MAE dan DSC untuk menilai kesesuaian hasil rekonstruksi dengan objek asli.
+![Comparison Results](outputs/figures/model-predict.png)  
 
----
-
-### **Instalasi & Setup**
-
-Untuk menjalankan proyek ini, pastikan Anda memiliki Python 3.8+ dan pustaka yang diperlukan.
-
-1.  **Clone repositori ini:**
-    ```bash
-    git clone [https://github.com/nama-anda/proyek-skripsi-dot.git](https://github.com/nama-anda/proyek-skripsi-dot.git)
-    cd proyek-skripsi-dot
-    ```
-
-2.  **Buat environment virtual (disarankan):**
-    ```bash
-    python -m venv venv
-    source venv/bin/activate  # Untuk Windows: venv\Scripts\activate
-    ```
-
-3.  **Install semua dependensi:**
-    ```bash
-    pip install -r requirements.txt
-    ```
+*(The figure above shows how the proposed model produces reconstructed images that are closer to the ground-truth object.)*  
 
 ---
 
-### **Cara Menggunakan**
+## 🔬 Methodology  
 
-Seluruh proses, mulai dari pembuatan arsitektur model, pelatihan model, hingga evaluasi hasil rekonstruksi dapat dijalankan langsung melalui notebook tunggal yang tersedia di folder notebooks/.
-Cukup buka notebook tersebut dengan Jupyter Notebook atau Jupyter Lab, lalu jalankan sel-selnya secara berurutan untuk mereproduksi keseluruhan alur eksperimen.
+This research develops an image reconstruction model for the CW-DOT system.  
+
+- **Input**: intensity distribution (image format)  
+- **Output**: reconstructed images resembling the ground-truth object  
+
+The workflow includes:  
+1. **Preprocessing** – normalization of intensity data and splitting into training/testing sets.  
+2. **Model** – a deep learning architecture (CNN-UNET) is used to directly learn the mapping from input intensities to reconstructed images.  
+3. **Training** – the model is trained with Binary Cross Entropy (BCE) loss.  
+4. **Evaluation** – performance is measured using **Mean Absolute Error (MAE)** and **Dice Similarity Coefficient (DSC)**.  
 
 ---
 
-### **Sitasi & Ucapan Terima Kasih**
+## ⚙️ Installation & Setup  
 
-* Simulasi numerik dijalankan menggunakan perangkat lunak yang dikembangkan oleh [Ukhrowiyah, 2018].
-* Terima kasih kepada dosen pembimbing, Dr. Nuril Ukhrowiyah, M.Si dan Yhosep Gita Yhun Yhuwana, S.Si., M.T., atas bimbingan dan masukannya.
+Requirements: **Python 3.8+** and the listed dependencies.  
+
+1. **Clone this repository**  
+   ```bash
+   git clone https://github.com/your-username/cwdot-cnn-unet.git
+   cd cwdot-cnn-unet
+   ```
+
+2. **Create a virtual environment (recommended)**  
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # Windows: venv\Scripts\activate
+   ```
+
+3. **Install dependencies**  
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+---
+
+## 🚀 Usage  
+
+The full workflow — model construction, training, and evaluation — can be run directly from the provided Jupyter Notebook:  
+
+```bash
+jupyter notebook notebooks/CNN_UNET_CW-DOT.ipynb
+```  
+
+Simply run the cells in order to reproduce the experiments.  
+
+---
+
+## 📂 Project Structure  
+
+```bash
+├── data/               # Dataset (simulated or real measurement data)
+├── notebooks/          # Jupyter notebooks for training & evaluation
+├── outputs/            # Saved figures and reconstructed results
+│   └── figures/        # Visualization results
+├── src/                # Source code (model, utils, training scripts)
+├── requirements.txt    # Python dependencies
+└── README.md           # Project documentation
+```  
+
+---
+
+## 📚 Citation & Acknowledgements  
+
+- Numerical simulation was based on the software developed by **Ukhrowiyah (2018)**.  
+- Special thanks to my supervisors:  
+  - **Dr. Nuril Ukhrowiyah, M.Si**  
+  - **Yhosep Gita Yhun Yhuwana, S.Si., M.T.**  
+
+If you use this code or dataset in your research, please cite accordingly.  
