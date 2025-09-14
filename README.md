@@ -72,7 +72,6 @@ Simply run the cells in order to reproduce the experiments.
 ├── notebooks/          # Jupyter notebooks for training & evaluation
 ├── outputs/            # Saved figures and reconstructed results
 │   └── figures/        # Visualization results
-├── src/                # Source code (model, utils, training scripts)
 ├── requirements.txt    # Python dependencies
 └── README.md           # Project documentation
 ```  
